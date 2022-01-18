@@ -1,0 +1,27 @@
+{
+  "name": "nextjs-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cp -r src/slides dist/slides && parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Itera/nextjs-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Itera/nextjs-workshop/issues"
+  },
+  "homepage": "https://github.com/Itera/nextjs-workshop#readme",
+  "dependencies": {
+    "reveal.js": "^4.2.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.1"
+  }
+}
