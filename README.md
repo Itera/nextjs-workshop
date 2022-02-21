@@ -29,3 +29,15 @@ Path | Method | Description | Query Parameters
 `/blog-posts` | `POST` | Create new post. |
 `/blog-posts/{id}` | `GET` | Returns a specific blog post. | - `_publicationState=preview` required for draft post
 `/blog-posts/{id}` | `PUT` | Edit post.
+
+
+#### Authentication
+
+An `Authentication` header is required to view and edit draft posts. The CMS expects a bearer token, which you can get by making a POST request to `https://cms.itera.anhtin.no/auth/local` with the following JSON body:
+
+```json
+{
+  "identifier": "test",
+  "password": "abc123"
+}
+```
