@@ -14,7 +14,7 @@
     "url": "git+https://github.com/Itera/nextjs-workshop.git"
   },
   "scripts": {
-    "start": "nodemon --exec 'parcel ./src/index.html' --watch ./src",
+    "start": "nodemon --exec 'parcel ./src/index.html' --watch ./src --ext js,md",
     "build": "parcel build ./src/index.html --public-url https://itera.github.io/nextjs-workshop/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
