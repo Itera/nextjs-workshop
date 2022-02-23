@@ -1,91 +1,164 @@
 ## What is Next.js?
 
-* Framework for building fast webapplications easily
-* Strict way to structure a project into:
-  * Serverless functions
-  * Pages
+* Framework for building fast web apps
+* Built on top of React
+* Opinionated project structure
   * Components
+  * Pages
+  * Serverless functions
 
 ---
 
-### React Router on steriods
-* Concept of pages
-* Automatic routing
-* Support for
-  * Index routes `pages/index.js` -> `/`
-  * Nested routes  `pages/blog/first-post.js` -> `/blog/first-post`
-  * Dynamic routes `pages/blog/[slug].js` -> `/blog/:slug`
+### React Router on steroids
 
----
+* Routing based on file system
+* Supports
+  * Index routes
+  * Nested routes 
+  * Dynamic routes
 
-#### next/router
-* next/router allows for manipulation of router object
-  * Pathname
-  * URL Query
-  * Locales
-  * Listen to router events
 ===
 
-#### next/link
-* Client side route transitions with `<Link>` component.
+#### Index Route
+
+`pages/index.js` -> `/`
+
+===
+
+#### Nested Route
+
+`pages/blog/first-post.js` -> `/blog/first-post`
+
+===
+
+#### Dynamic Route
+
+`pages/blog/[slug].js` -> `/blog/:slug`
+
+---
+
+#### `next/router`
+
+* Exposes a router object that allows us to:
+  * Read:
+    * Pathname
+    * Query params
+    * Locales
+  * Navigate between pages
+  * React to router events
+===
+
+#### `next/link`
+
+* Provides `<Link>` component
+* Client side routing
 * Automatic prefetching
-* Support for Static generation and Server side generation
+* Works with all rendering strategies
 
-```js
-
+```jsx
 <Link href="/">
-    <a>Home</a>
+  <a>Home</a>
 </Link>
- 
 ```
 ---
 
-### Tooling & Conformance
-* Next 11 Conformance was introduced
-  * Conformance: A system that provides carefully crafted solutions to support optimal UX.
-  * Simple terms: A set of eslint rules to improve performance and Core Web Vitals. 
+### Conformance
+
+* Next.js 11 introduced Conformance
+  * System baked into the framework ensuring good:
+    * Performance
+    * Security
+    * Accessibility
+  * Visible as tools that improve Core Web Vitals
+  * Crafted by Google
+
+---
+
+### Tooling
+
+* Built-in support for:
+  * ESlint rules
+    * Production-ready "sane defaults"
+    * Can be customized
+  * Prettier
+  * TypeScript
+
 ===
 
-#### Linting
-* Strict production ready ESlint rules vetted by Google Chrome dev-team. 
-  * Focus on speed, security and a11y
-* Built in support for Prettier
+### Developer Convenience
+
+* Fast Refresh
+* Custom compiler
 
 ===
 
 #### Fast Refresh
-* Rust based building and compilation
-* Fast refresh: Rust based compiler
-* Allows re-compilation at a react component level without losing state
+
+* Smarter Hot Module Reloading (HMR)
+  * Only edited files are re-run
+  * Persists component state
+  * Reloading not required on errors
+
+===
+
+#### Custom compiler
+
+* Rust-based
+  * 17x faster than Babel
+  * 5x faster builds
+  * 3x faster Fast Refresh
+* Enabled by default (Next.js ≥ 12)
+  * Unless `.babelrc` exists
+
 ---
 
 ### Rendering Strategies
-* Pre-rendering by default. (Pre-generated HTML)
-* Built in hydration to mix SSR, SSG & ISR
-* Options for:
-  * Server-side rendering (SSR)
-  * Static site generation (SSG)
-  * Incremental Static Regeneration (ISR)
+
+* Server-side rendering (SSR)
+* Static site generation (SSG)
+* Incremental Static Regeneration (ISR)
+
+===
+
+#### Common
+
+* Pre-renders HTML server-side, by default
+* Hydrates HTML into React app client-side
+
 ===
 
 #### Server-Side Rendering (SSR)
-* Page generated at request
-* Pro's:
+
+* Page generated at runtime on request
+* Pros:
   * Security
   * Dynamic content
-* Con's:
-  * Slower than SSR
+* Cons:
+  * Slower than SSG/ISR
   * Requires a server 
+
 ===
 
 #### Static Site Generation (SSG)
-* Page generated at build-time to HTML
-* Pro's:
+
+* Page generated at build-time
+* Pros:
   * Fast
   * Cacheable
-* Con's: 
-  * Not dynamic
+* Cons: 
+  * No dynamic content
+  * Unchanging content
 
 ===
 
 #### Incremental Static Regeneration (ISR)
+
+* Page generated:
+  * At build-time
+  * Regularly or upon request
+* Pros
+  * Fast
+  * Cacheable
+* Cons: 
+  * No dynamic content
+  * Requires a server and edge functions
