@@ -23,12 +23,12 @@ In this workshop, we'll try to create a blog site using Next.js. To support this
 
 The CMS can be found at: `https://cms.itera.anhtin.no/`. You will not be able to access the admin dashboard, but you'll be able to access blog posts through the following REST API endpoints:
 
-Path | Method | Description | Query Parameters
--- | -- | -- | --
-`/blog-posts` | `GET` | Returns all (published) blog posts. | - `_publicationState=preview` includes draft posts<br />- `published_at_null=true` excludes published posts
-`/blog-posts` | `POST` | Create new post. |
-`/blog-posts/{id}` | `GET` | Returns a specific blog post. | - `_publicationState=preview` required for draft post
-`/blog-posts/{id}` | `PUT` | Edit post.
+| Path               | Method | Description                         | Query Parameters                                                                                            |
+| ------------------ | ------ | ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `/blog-posts`      | `GET`  | Returns all (published) blog posts. | - `_publicationState=preview` includes draft posts<br />- `published_at_null=true` excludes published posts |
+| `/blog-posts`      | `POST` | Create new post.                    |
+| `/blog-posts/{id}` | `GET`  | Returns a specific blog post.       | - `_publicationState=preview` required for draft post                                                       |
+| `/blog-posts/{id}` | `PUT`  | Edit post.                          |
 
 
 #### Authentication
@@ -41,3 +41,11 @@ An `Authentication` header is required to view and edit draft posts. The CMS exp
   "password": "abc123"
 }
 ```
+
+
+### Tips
+
+We recommend using a component library that you're already familiar with to
+avoid wasting time. Alternatively, a _No-Class CSS Framework_ like
+[holiday.css](https://holidaycss.js.org/) also provides a zero-hassle
+development experience.
