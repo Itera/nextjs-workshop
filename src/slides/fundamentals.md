@@ -85,14 +85,14 @@
 
 ===
 
-### Developer Convenience
+#### Developer Convenience
 
 * Fast Refresh
 * Custom compiler
 
 ===
 
-#### Fast Refresh
+##### Fast Refresh
 
 * Smarter Hot Module Reloading (HMR)
   * Only edited files are re-run
@@ -101,7 +101,7 @@
 
 ===
 
-#### Custom compiler
+##### Custom compiler
 
 * Rust-based
   * 17x faster than Babel
