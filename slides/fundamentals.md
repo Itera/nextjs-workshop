@@ -56,9 +56,7 @@
 * Works with all rendering strategies
 
 ```jsx
-<Link href="/">
-  <a>Home</a>
-</Link>
+<Link href="/">Home</Link>
 ```
 ---
 
