@@ -33,7 +33,7 @@ The CMS can be found at: `https://cms.itera.anhtin.no/`. You will not be able to
 
 #### Authentication
 
-An `Authentication` header is required to view and edit draft posts. The CMS expects a bearer token, which you can get by making a POST request to `https://cms.itera.anhtin.no/auth/local` with the following JSON body:
+An `Authorization` header is required to view and edit draft posts. The CMS expects a bearer token, which you can get by making a POST request to `https://cms.itera.anhtin.no/auth/local` with the following JSON body:
 
 ```json
 {
